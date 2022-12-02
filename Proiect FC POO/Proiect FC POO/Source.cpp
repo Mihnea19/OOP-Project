@@ -1,75 +1,43 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
-class Car
+class CREATE_TABLE
 {
-private:
-    string model;
-    int mileage;
-    int year;
-    float price;
 public:
-    //Car()          //default constructor
-    //{
-    //    model = "unknown";
-    //    mileage = 0;
-    //    year = 0000;
-    //    price=0.00;
+    string A;
+    int B;
+    string C;
+    string D;
+    string E;
+   
 
-    //}
-    Car(string model = "none", int mileage = 0, int year = 2022)
+    CREATE_TABLE(string brand, int year, string category, string model, string color)
     {
-        this->model = model;
-        this->mileage = mileage;
-        this->year = year;
-        price = 15000;
-    }
-    ~Car()   //destructor adik distrugatorul de mame
-    {
-        cout << "Ai fost distrus de Distrugator" << endl;
-    }
-
-    Car(const Car& c)   // copy constructor
-    {
-        this->model = c.model;
-        this->mileage = c.mileage + 1;
-        this->year = c.year;
-        price = c.price;
-    }
-    string getModel()
-    {
-        return model;
-    }
-    int getMileage()
-    {
-        return mileage;
-    }
-    void setMileage(int mileage)
-    {
-        if (mileage > 0 && mileage > this->mileage)
-        {
-            this->mileage = mileage;
-        }
+        A = brand;  
+        B = year;    
+        C = category;      
+        D = model;     
+        E = color;
     }
 };
 
 int main()
 {
-    Car  car1;
-    Car car2("coita", 120000, 2010);
-    Car car3(car2);
-    Car car4 = car2;
-    cout << car2.getModel() << endl;
-    cout << car2.getMileage() << endl;
-    car2.setMileage(300000);
-    cout << car2.getMileage() << endl;
-    Car* pc = &car1;
-    pc = new Car();  //object in heap
-    cout << pc->getModel() << endl;
-    delete pc;
-    pc = NULL;
-    Car* array = new Car[3];
-    cout << array[0].getModel() << endl;
-    delete[] array;
-    array = NULL;
+    CREATE_TABLE recordArray[5] = { CREATE_TABLE("Audi", 2012, "sedan", "a4","green"),   CREATE_TABLE("Opel", 2002, "hatch", "astra","black"),  CREATE_TABLE("Chevrolet", 1999, "hatch", "spark","green"),   CREATE_TABLE("Dacia", 2012, "sedan", "logan","red"),
+                               CREATE_TABLE("Hyundai", 2020, "hatch", "i30","yellow") };
+
+    cout << left << setw(10) << "BRAND" << left << setw(5) << "YEAR" << left
+        << setw(8) << "CATEGORY" << left << setw(10) << "MODEL" << left << setw(4) << "COLOR" << endl;
+
+    for (int i = 0; i <= 4; i++)
+    {
+        cout << left << setw(10) << recordArray[i].A
+            << left << setw(5) << recordArray[i].B
+            << left << setw(8) << recordArray[i].C
+            << left << setw(10) << recordArray[i].D
+            << left << setw(4) << recordArray[i].E
+            << endl;
+    }
+    return 0;
 }
