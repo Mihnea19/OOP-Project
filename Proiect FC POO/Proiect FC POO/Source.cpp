@@ -24,7 +24,7 @@ public:
 
 int main()
 {
-    CREATE_TABLE recordArray[5] = { CREATE_TABLE("Audi", 2012, "sedan", "a4","green"),   CREATE_TABLE("Opel", 2002, "hatch", "astra","black"),  CREATE_TABLE("Chevrolet", 1999, "hatch", "spark","green"),   CREATE_TABLE("Dacia", 2012, "sedan", "logan","red"),
+    CREATE_TABLE recordArray[5] = { CREATE_TABLE("Seat", 2012, "sedan", "leon","green"),   CREATE_TABLE("Peugeot", 2002, "hatch", "308","black"),  CREATE_TABLE("Chevrolet", 1999, "hatch", "spark","green"),   CREATE_TABLE("Dacia", 2012, "sedan", "logan","red"),
                                CREATE_TABLE("Hyundai", 2020, "hatch", "i30","yellow") };
 
     cout << left << setw(10) << "BRAND" << left << setw(5) << "YEAR" << left
